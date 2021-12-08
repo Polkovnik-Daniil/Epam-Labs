@@ -1,0 +1,7 @@
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\bin\Debug\Aircompany.exe.config
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\bin\Debug\Aircompany.exe
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\bin\Debug\Aircompany.pdb
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\obj\Debug\Aircompany.csproj.AssemblyReference.cache
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\obj\Debug\Aircompany.csproj.CoreCompileInputs.cache
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\obj\Debug\Aircompany.exe
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\Aircompany\obj\Debug\Aircompany.pdb

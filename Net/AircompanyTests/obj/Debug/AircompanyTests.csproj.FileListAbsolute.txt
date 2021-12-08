@@ -1,0 +1,13 @@
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\AircompanyTests.dll
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\AircompanyTests.pdb
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\Aircompany.exe
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\nunit.framework.dll
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\Aircompany.pdb
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\Aircompany.exe.config
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\nunit.framework.pdb
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\bin\Debug\nunit.framework.xml
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\obj\Debug\AircompanyTests.csproj.AssemblyReference.cache
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\obj\Debug\AircompanyTests.csproj.CoreCompileInputs.cache
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\obj\Debug\AircompanyTests.csproj.CopyComplete
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\obj\Debug\AircompanyTests.dll
+D:\Daniel\Education\5 semester\ST\Laboratory works\EPAM_Labs\Net\AircompanyTests\obj\Debug\AircompanyTests.pdb
