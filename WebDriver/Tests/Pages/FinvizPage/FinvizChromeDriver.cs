@@ -15,7 +15,7 @@ namespace Tests.Pages.AlpariPage {
         private By logInBtnLocator = By.XPath("//a[@href='/login.ashx']");
         private By logInBtnLocatorNews = By.XPath("//a[@href='/news.ashx']");
         private By logInBtnLocatorHelp = By.XPath("//a[@href='/help/screener.ashx']");
-        private By logInBtnLocatorMaps = By.XPath("//a[@href='//map.ashx']");
+        private By logInBtnLocatorMaps = By.XPath("//a[@href='/map.ashx']");
         private By logInBtnLocatorScreener = By.XPath("//a[@href='/screener.ashx']");
         private By logInBtnLocatorGroups = By.XPath("//a[@href='/groups.ashx']");
         private By logInBtnLocatorFutures = By.XPath("//a[@href='/futures.ashx']");
@@ -56,7 +56,7 @@ namespace Tests.Pages.AlpariPage {
             FindElementWithWait(valueBasicMater).Click();
             Thread.Sleep(Sleep);
         }
-        int Sleep = 600;
+        int Sleep = 1600;
         public void Task2() {
             FindElementWithWait(logInBtnLocatorGroups).Click();
             FindElementWithWait(By.XPath("//option[@value = 'groups.ashx?g=industry&v=210&o=name']")).Click();
@@ -78,37 +78,43 @@ namespace Tests.Pages.AlpariPage {
             Thread.Sleep(Sleep);
         }
         public void Task5() {
-            FindElementWithWait(logInBtnLocatorFutures).Click();
-            FindElementWithWait(By.XPath("//a[@href = '/futures_performance.ashx']")).Click();
-            FindElementWithWait(By.XPath("//a[@href = '/futures_performance.ashx?v=12']")).Click();
+            FindElementWithWait(By.XPath("//a[@href = '/insidertrading.ashx']")).Click();
+            FindElementWithWait(By.XPath("//a[@href = 'insidertrading.ashx?or=-10&tv=100000&tc=7&o=-transactionValue']")).Click();
+            FindElementWithWait(By.XPath("//option[@value = 'insidertrading.ashx?or=-10&tv=100000&tc=1&o=-transactionvalue']")).Click();
+            Thread.Sleep(Sleep);
+        }
+        public void Task9() {
+            FindElementWithWait(logInBtnLocatorScreener).Click();
+            FindElementWithWait(By.XPath("//option[@value = 'amex']")).Click();
+            FindElementWithWait(By.XPath("//option[@value = 'high']")).Click();
+            FindElementWithWait(By.XPath("//a[@href = 'screener.ashx?v=121&f=exch_amex,fa_div_high']")).Click();
+            Thread.Sleep(Sleep);
+        }
+        public void Task10() {
+            FindElementWithWait(By.XPath("//a[@href = '/forex.ashx']")).Click();
+            FindElementWithWait(By.XPath("//a[@href = '/forex_charts.ashx']")).Click();
+            FindElementWithWait(By.XPath("//a[@href = 'forex_charts.ashx?t=eurusd&tf=d1']")).Click();
+
             Thread.Sleep(Sleep);
         }
         public void Task6() {
-            IWebElement search1 = FindElementWithWait(search);
-            search1.Clear();
-            search1.SendKeys("pop");
-            FindElementWithWait(By.XPath("//span[@class = 'fa fa-search']")).Click();
+
+            FindElementWithWait(logInBtnLocatorNews).Click();
+            FindElementWithWait(By.XPath("//option[@value = 'news.ashx?v=2']")).Click();
             Thread.Sleep(Sleep);
         }
         public void Task7() {
-
-            FindElementWithWait(logInBtnLocatorNews).Click();
-            FindElementWithWait(By.XPath("//option[@id = 'newsView']")).Click();
-            Thread.Sleep(Sleep);
-        }
-        public void Task8() {
             FindElementWithWait(logInBtnLocatorHelp).Click();
             FindElementWithWait(By.XPath("//a[@href = '/help/technical-analysis/introduction.ashx']")).Click();
             FindElementWithWait(By.XPath("//a[@href = '/help/technical-analysis/moving-averages.ashx']")).Click();
             Thread.Sleep(Sleep);
         }
-        public void Task9() {
+        public void Task8() {
             FindElementWithWait(logInBtnLocatorMaps).Click();
-            IWebElement searchmap = FindElementWithWait(emailLocator);
+            IWebElement searchmap = FindElementWithWait(By.XPath("//input[@placeholder = 'Quick search ticker']"));
             searchmap.Clear();
             searchmap.SendKeys("PP");
-            FindElementWithWait(By.XPath("//input[@placeholder = 'Quick search ticker']")).Click();
-            FindElementWithWait(By.XPath("//a[@href= '#']")).Click();
+            FindElementWithWait(By.XPath("//a[@href= '/map.ashx?t=sec_all']")).Click();
             Thread.Sleep(Sleep);
         }
         public void Login(string login, string password) {

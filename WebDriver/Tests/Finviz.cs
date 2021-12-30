@@ -24,7 +24,7 @@ namespace Tests
             FinvizChromeDriver chromeDriver = new FinvizChromeDriver(driver,15);
             chromeDriver.OpenPage();
             chromeDriver.Login(login, password);
-            chromeDriver.Task1();
+            chromeDriver.Task5();
 
             //chromeDriver.OpenAccountPage();
             //chromeDriver.ChooseDemoAndInput100USD();
