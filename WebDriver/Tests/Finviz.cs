@@ -7,58 +7,99 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tests.Pages.AlpariPage;
+using Tests.Pages;
+using Tests.Service;
+using Tests.Models;
 
-namespace Tests
-{
+namespace Tests {
     [TestFixture]
-    public class Finviz
-    {
-        private IWebDriver driver;
-        private string login= "0205danik@gmail.com";
-        private string password = "w9*8cnf+#JH!sKi";///hQ8K?vZY53#6+dC
-
+    public class Finviz {
+        private Steps.Steps steps = new Steps.Steps();
+        //1
         [Test]
-        public void CreateDemoAccount()
-        {
-            FinvizChromeDriver chromeDriver = new FinvizChromeDriver(driver,15);
-            chromeDriver.OpenPage();
-            chromeDriver.Login(login, password);
-            chromeDriver.Task5();
-
-            //chromeDriver.OpenAccountPage();
-            //chromeDriver.ChooseDemoAndInput100USD();
-            //Assert.IsNotNull(chromeDriver.FindAccountInfo());
+        public void MainPageSearch() {
+            steps.Search();
+            Assert.IsTrue(steps.FindResultSearch());
         }
-        //[Test]
-        //public void BeginTrading()
-        //{
-
-        //    AlpariChromeDriver chromeDriver = new AlpariChromeDriver(driver, 600);
-
-        //    chromeDriver.OpenPage();
-        //    chromeDriver.Login(login, password);
-        //    chromeDriver.OpenAccountPage();
-        //    chromeDriver.OpenTradingPage();
-        //    chromeDriver.ConnectToTradingAccount(loginAccount, passwordAccount);
-        //    Assert.IsNotNull(chromeDriver.FindTradingInfo());
-        //}
+        //2
+        [Test]
+        public void ScreenerFiltration() {
+            steps.Filtr();
+            Assert.IsTrue(steps.FindFiltrationInfo());
+        }
+        //3
+        [Test]
+        public void CreatePortfolio() {
+            steps.CreatePorfolio();
+            Assert.IsTrue(steps.FindPortfolio());
+            steps.DestroyPortfolio();
+        }
+        //4
+        [Test]
+        public void DestroyPortfolio() {
+            steps.CreatePorfolio();
+            steps.DestroyPortfolio();
+            Assert.IsNull(steps.FindDestroyPortfolio());
+        }
+        //5
+        [Test]
+        public void SearchTicker() {
+            steps.SearchScreener();
+            Assert.IsNotNull(steps.FindResultSearchScreener());
+        }
+        //6
+        [Test]
+        public void SetParameterSearch() {
+            steps.SetValue();
+            Assert.IsNotNull(steps.FindResultSearchScreener());
+        }
+        //7
+        [Test]
+        public void ResetParameterSearch() {
+            steps.SetValue();
+            steps.Reset();
+            Assert.IsNotNull(steps.FindResultSearchScreener());
+        }
+        //8
+        [Test]
+        public void SaveScreenParameter() {
+            steps.SetValue();
+            steps.SaveScreenParameter();
+            Assert.IsNotNull(steps.FindInfoTab());
+            DeleteScreenParameter();
+        }        
+        //9
+        [Test]
+        public void DeleteScreenParameter() {
+            SaveScreenParameter();
+            steps.DeleteScreenParameter();
+            Assert.IsNotNull(steps.FindInfoTab());
+        }
+        //10    
+        [Test]
+        public void AccountSetting() {
+            steps.SetParameter();
+            Assert.IsTrue(steps.FindInFoAccount());
+            steps.BackParameter();
+        }
+        //11 additional
+        [Test]
+        public void BackAccountSetting() {
+            steps.SetParameter();
+            steps.BackParameter();
+            Assert.IsTrue(steps.FindInFoBackAccount());
+        }
         [TearDown]
-        public void TearDownTest()
-        {
-            driver.Quit();
+        public void TearDownTest() {
+            steps.CloseBrowser();
         }
 
 
         [SetUp]
-        public void SetupTest()
-        {
-            ChromeOptions options = new ChromeOptions();
-
-            //options.AddArguments("load-extension=C:\\Users\\Asus\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\gighmmpiobklfepjocnamgkkbiglidom\\4.41.0_0");
-            //options.AddArgument("user-data-dir=C:\\Users\\Asus\\AppData\\Local\\Google\\Chrome\\User Data");
-            options.AddArgument("--enable-javascript");
-            driver = new ChromeDriver(options);
+        public void SetupTest() {
+            steps.InitBrowser();
+            steps.LoginFinviz();
+            steps.CheckAccount();
         }
 
     }

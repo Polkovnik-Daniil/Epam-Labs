@@ -58,9 +58,14 @@ namespace Tests
         public void SetupTest()
         {
             ChromeOptions options = new ChromeOptions();
+
+
             options.AddArguments("load-extension=C:\\Users\\Asus\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\gighmmpiobklfepjocnamgkkbiglidom\\4.39.1_0");
+
             driver = new ChromeDriver(options);
 
         }
+
+
     }
 }
